@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Hakkımızda{% endblock title %}
+
+{% block body %}
+
+    <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Site Hakkında</h1>
+                                <p class="lead fw-normal text-muted mb-4">
+                                    Bu AtKafası fikrini çok değerli bir sınıf arkadaşımdan alarak sınıftaki arkadaşlarımızın bir kısmını bu sitede tamamen ironik bir şekilde kısa biyografi tarzında ekledik.
+                                </p>
+                                <p class="lead fw-normal text-muted mb-4">
+                                    Site tamamen şaka amaçlı yapılmış olup herhangi bir kurum,kuruluşu veya grubu desteklememektedir.
+                                </p>
+                                <p class="lead fw-normal text-muted mb-4">
+                                    Sitenin açık kaynak kodlarına erişmek için <a href="https://github.com/MustafaKayra/ClassProject-Bootstrap" target="_blank">linke</a> tıklayabilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="text-center mb-5">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                            <h1 class="fw-bolder">Şikayet Ve Öneriler İçin</h1>
+                            <p class="lead fw-normal text-muted mb-0">Formu doldurarak yardımcı olabilirsiniz.</p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <form method="post">
+                                {% csrf_token %}
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <label for="name">İsim Ve Soyisim</label>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <label for="email">E-mail adresi</label>
+                                    </div>
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" name="report" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <label for="message">Şikayet Veya Öneri</label>
+                                    </div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary" id="submitButton" type="submit">Submit</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </header>
+
+    
+
+{% endblock body %}

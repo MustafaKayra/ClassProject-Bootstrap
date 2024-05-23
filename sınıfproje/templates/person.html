@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{ person.name }}{% endblock title %}
+
+{% block body %}
+
+    <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="row gx-5">
+                                <div class="col-12"><img class="img-fluid rounded-3 mb-5" src="{{ person.image.url }}" alt="..." /></div>
+                                <style>
+                                    .img-fluid{
+                                        width: 1120px;
+                                        height: 320px;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">{{person.name}}</h1>
+                        <p class="lead fw-normal mb-0">{{person.description}}</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="row gx-5">
+                                <div class="col-lg-6"><img class="img-fluid rounded-3 mb-5" src="{% static 'img/akilsagliginikaybet2.png' %}" alt="..."></div>
+                                <div class="col-lg-6"><img class="img-fluid rounded-3 mb-5" src="{% static 'img/akilsagliginikaybet2.png' %}" alt="..."></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% endblock body %}

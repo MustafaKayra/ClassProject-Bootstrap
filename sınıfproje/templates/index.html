@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Anasayfa{% endblock title %}
+
+{% block body %}
+
+    <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Spastik/B ATP</h1>
+                        <a href="{% url 'about' %}"><p class="lead fw-normal text-muted mb-0">Site Hakkında</p></a>
+                    </div>
+                    <div class="row gx-5">
+                        {% for person in persons %}
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <a href="{% url 'WhoPerson' person.slug %}"><img class="img-fluid rounded-3 mb-3" src="{{ person.image.url }}" alt="{{ person.name }}" /></a>
+                                <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="{% url 'WhoPerson' person.slug %}">{{ person.name }}</a>
+                            </div>
+                            <style>
+                                .img-fluid{
+                                    width: 1110px;
+                                    height: 230px;
+                                }
+                            </style>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+
+
+{% endblock body %}
